@@ -13,10 +13,10 @@
 
   <div class="min-h-screen bg-gray-300">
 
-    <div class="flex min-h-screen relative">
+    <div class="flex h-screen overflow-hidden">
 
       <!-- menubar -->
-      <div id="menuBar" class=" bg-white px-12 border-r-2 md:flex flex-col items-center hidden  md:fixed md:h-full md:z-50 md:w-[15%]">
+      <div id="menuBar" class=" bg-white px-12 border-r-2 md:flex flex-col items-center hidden  ">
         <!-- logo -->
         <div class="w-16 m-3">
           <img src="../assests/teach-able-logo.jpeg" alt="">
@@ -102,15 +102,12 @@
 
       </div>
 
-
-
       <!-- --------------------------------------------------------------------------------------------------------------- -->
 
 
       <!-- RightDiv -->
 
-
-      <div class="bg-white w-full md:w-[85%] md:ml-[226px]">
+      <div class="bg-white w-full overflow-y-auto ">
 
 
 
@@ -123,7 +120,7 @@
 
         <!-- header -->
 
-        <div class="py-3 border-2 flex md:p-4 fixed w-full bg-white z-50 ">
+        <div class="py-3 border-2 flex md:p-4  bg-white z-50 overflow-y-hidden ">
 
           <!-- hamIcon -->
           <svg id="humBtn" class="w-4 m-2 md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -133,13 +130,14 @@
 
           <!-- header-contents -->
 
-          <div class=" w-[85%] flex justify-between items-center">
+          <div class=" flex w-full justify-between ">
+
 
             <div class="ml-2 text-[13px] font-semibold md:text-[17px]">Dashboard</div>
 
             <div class="bg-white flex items-center mr-2   ">
               <select class="mr-3 shadow-lg border pr-3 py-0.5 rounded-lg text-[12px] md:text-[14px] md:mr-6">
-                <option class="text-[10px] text-[px]" value="">🌏︎ English</option>
+                <option class="text-[10px]" value="">🌏︎ English</option>
               </select>
 
               <div class=" mr-3 text-md  md:text-[17px] md:mr-6">🔔</div>
@@ -240,8 +238,8 @@
         </div>
 
         <!-- curosel -->
-        <div class="w-full md:w-full h-[120px] md:h-64 overflow-hidden p-2 mt-[70px]">
-          <img id="curoselImage" src="" class="w-full h-full md:object-cover  rounded-lg" alt="carousel image" />
+        <div class="w-full md:w-full h-[120px] md:h-64 overflow-hidden p-2 mt-16">
+          <img id="curoselImage" src="" class="w-full h-full object-cover  rounded-lg" alt="carousel image" />
         </div>
 
         <!-- course-progres -->
@@ -288,118 +286,81 @@
 
 
         <!-- video-content -->
-        <div class=" p-2 mx-8 flex flex-col gap-5">
+        <div class="mx-8 flex flex-col">
 
-          <!-- **** -->
-          <div class="border-2 p-3 rounded-lg felx md:flex shadow-lg">
-            <!-- video-image -->
+          <!-- ***** -->
+          <div class="flex flex-col items-center justify-center border-2 rounded-lg p-2 md:flex-row">
 
-            <div class="border-2 border-amber-300 w-full md:w-72 h-32 m-1 rounded-lg overflow-hidden">
-              <img class="rounded-lg w-full h-ful" src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg"
-                alt="">
+            <!-- Video Thumbnail -->
+            <div class="h-[8rem] w-[12rem] rounded-lg">
+              <img class="h-full w-full rounded-lg border-2 border-amber-300 object-cover object-center"
+                src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg" alt="Course Thumbnail" />
             </div>
 
-            <!-- video-desc -->
+            <!-- Video Description -->
+            <div class="m-1 flex flex-1 flex-col md:items-start">
 
-            <div class="w-full h m-1 flex flex-col items-center md:items-start ">
               <div class="font-semibold text-gray-800">Sample test-1</div>
-              <div class="font-medium text-sm text-gray-400">Test Subtitle</div>
-              <div class="flex items-center justify-center p-1 font-medium text-sm text-gray-400 ">
-                <svg class="size-4 -rotate-90 mr-2" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Background Circle -->
-                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-400" stroke-width="6">
-                  </circle>
+              <div class="text-sm font-medium text-gray-400">Test Subtitle</div>
 
+              <div class="flex items-center p-1 text-sm font-medium text-gray-400">
+                <svg class="mr-2 size-4 -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-400" stroke-width="6" />
                 </svg>
                 0% completed
               </div>
-              <div class="font-normal text-sm text-gray-400">(last updated at may 23rd,20251:13 PM)</div>
 
-              <div class="flex  w-full md:justify-end justify-center">
-                <button
-                  class="font-medium border-2 rounded-md px-2 md:p-[7px] m-2  border-[#3d8a87] text-sm text-[#3d8a87]">VEIW
-                  COURSE</button>
+              <!-- Footer Row -->
+              <div class="flex w-full items-center md:justify-between">
+                <div class="text-sm font-normal text-gray-400">
+                  (last updated at May 23rd, 2025 – 1:13 PM)
+                </div>
+                <button class="m-2 rounded-md border-2 border-[#3d8a87] p-[4px] text-sm font-medium text-[#3d8a87]">
+                  VIEW COURSE
+                </button>
               </div>
 
-
             </div>
-
           </div>
 
-          <!-- **** -->
-          <div class="border-2 p-3 rounded-lg felx md:flex shadow-lg">
-            <!-- video-image -->
+          <!-- ***** -->
+          <div class="flex flex-col items-center justify-center border-2 rounded-lg p-2 md:flex-row">
 
-            <div class="border-2 border-amber-300 w-full md:w-72 h-32 m-1 rounded-lg overflow-hidden">
-              <img class="rounded-lg w-full h-ful" src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg"
-                alt="">
+            <!-- Video Thumbnail -->
+            <div class="h-[8rem] w-[12rem] rounded-lg">
+              <img class="h-full w-full rounded-lg border-2 border-amber-300 object-cover object-center"
+                src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg" alt="Course Thumbnail" />
             </div>
 
-            <!-- video-desc -->
+            <!-- Video Description -->
+            <div class="m-1 flex flex-1 flex-col md:items-start">
 
-            <div class="w-full h m-1 flex flex-col items-center md:items-start ">
               <div class="font-semibold text-gray-800">Sample test-1</div>
-              <div class="font-medium text-sm text-gray-400">Test Subtitle</div>
-              <div class="flex items-center justify-center p-1 font-medium text-sm text-gray-400 ">
-                <svg class="size-4 -rotate-90 mr-2" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Background Circle -->
-                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-400" stroke-width="6">
-                  </circle>
+              <div class="text-sm font-medium text-gray-400">Test Subtitle</div>
 
+              <div class="flex items-center p-1 text-sm font-medium text-gray-400">
+                <svg class="mr-2 size-4 -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-400" stroke-width="6" />
                 </svg>
                 0% completed
               </div>
-              <div class="font-normal text-sm text-gray-400">(last updated at may 23rd,20251:13 PM)</div>
 
-              <div class="flex  w-full md:justify-end justify-center">
-                <button
-                  class="font-medium border-2 rounded-md px-2 md:p-[7px] m-2  border-[#3d8a87] text-sm text-[#3d8a87]">VEIW
-                  COURSE</button>
+              <!-- Footer Row -->
+              <div class="flex w-full items-center md:justify-between">
+                <div class="text-sm font-normal text-gray-400">
+                  (last updated at May 23rd, 2025 – 1:13 PM)
+                </div>
+                <button class="m-2 rounded-md border-2 border-[#3d8a87] p-[4px] text-sm font-medium text-[#3d8a87]">
+                  VIEW COURSE
+                </button>
               </div>
 
-
             </div>
-
           </div>
 
-
-          <!-- **** -->
-          <div class="border-2 p-3 rounded-lg felx md:flex shadow-lg">
-            <!-- video-image -->
-
-            <div class="border-2 border-amber-300 w-full md:w-72 h-32 m-1 rounded-lg overflow-hidden">
-              <img class="rounded-lg w-full h-ful" src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg"
-                alt="">
-            </div>
-
-            <!-- video-desc -->
-
-            <div class="w-full h m-1 flex flex-col items-center md:items-start ">
-              <div class="font-semibold text-gray-800">Sample test-1</div>
-              <div class="font-medium text-sm text-gray-400">Test Subtitle</div>
-              <div class="flex items-center justify-center p-1 font-medium text-sm text-gray-400 ">
-                <svg class="size-4 -rotate-90 mr-2" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Background Circle -->
-                  <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-400" stroke-width="6">
-                  </circle>
-
-                </svg>
-                0% completed
-              </div>
-              <div class="font-normal text-sm text-gray-400">(last updated at may 23rd,20251:13 PM)</div>
-
-              <div class="flex  w-full md:justify-end justify-center">
-                <button
-                  class="font-medium border-2 rounded-md px-2 md:p-[7px] m-2  border-[#3d8a87] text-sm text-[#3d8a87]">VEIW
-                  COURSE</button>
-              </div>
-
-
-            </div>
-
-          </div>
-
+          
         </div>
+
 
 
       </div>
