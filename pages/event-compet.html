@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-300 relative">
+        <div class="flex h-screen overflow-hidden">
+            <!-- menubar -->
+            <div id="menuBar" class="bg-white px-12 border-r-2 md:flex flex-col items-center hidden">
+                <!-- logo -->
+                <div class="w-16 m-3">
+                    <img src="../assests/teach-able-logo.jpeg" alt="" />
+                    <p class="text-[10px] font-semibold text-center">
+                        Teach <span class="text-[#4FBAB4]">Able</span>
+                    </p>
+                </div>
+
+                <!-- menubar content -->
+                <div class="flex flex-col  space-y-2.5 mt-2 text-gray-500">
+                    <div class="text-green-700 bg-green-100 p-0.5 rounded-lg flex">
+                        <svg class="w-4 inline mr-1 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512">
+                            <path
+                                d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zm64 64l0 256 160 0 0-256L64 160zm384 0l-160 0 0 256 160 0 0-256z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Dashboard
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path
+                                d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            My Profile
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path
+                                d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            My Course
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 576 512">
+                            <path
+                                d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            All Course
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 512">
+                            <path
+                                d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Resources
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-3 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 384 512">
+                            <path
+                                d="M64 464c-8.8 0-16-7.2-16-16L48 64c0-8.8 7.2-16 16-16l160 0 0 80c0 17.7 14.3 32 32 32l80 0 0 288c0 8.8-7.2 16-16 16L64 464zM64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-293.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0L64 0zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Webinar
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path
+                                d="M64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Mock Test
+                        </p>
+                    </div>
+
+                    <div class="flex">
+                        <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path
+                                d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Competition
+                        </p>
+                    </div>
+
+                    <div class="w-full text-left flex">
+                        <svg class="w-4 mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path
+                                d="M192 0c-41.8 0-77.4 26.7-90.5 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-37.5 0C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM72 272a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm104-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zM72 368a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm88 0c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z" />
+                        </svg>
+                        <p class="hover:text-green-700 text-[14px] ml-2 cursor-pointer">
+                            Leaderboard
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- --------------------------------------------------------------------------------------------------------------- -->
+
+            <!-- RightDiv -->
+
+            <div class="bg-white w-full overflow-hidden">
+                <!-- header -->
+
+                <div class="py-3 border-2 flex md:p-4 bg-white z-50 overflow-y-hidden">
+                    <!-- hamIcon -->
+                    <svg id="humBtn" class="w-4 m-2 md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+                    </svg>
+
+                    <!-- header-contents -->
+
+                    <div class="flex w-full justify-between items-center">
+                        <div class="ml-2 text-[13px] font-semibold md:text-[17px]">
+                            Dashboard
+                        </div>
+
+                        <div class="bg-white flex items-center mr-2">
+                            <select
+                                class="mr-3 shadow-lg border pr-3 py-0.5 rounded-lg text-[12px] md:text-[14px] md:mr-6 cursor-pointer">
+                                <option class="text-[10px]" value="">🌏︎ English</option>
+                            </select>
+
+                            <div class="mr-3 text-md md:text-[17px] md:mr-6 cursor-pointer">
+                                🔔
+                            </div>
+                            <div class="mr-3 w-6 md:w-8 md:mr-4 cursor-pointer">
+                                <img src="/assests/user.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- absolute menu bar -->
+                    <div id="absoluteMenuBar" style="display: none"
+                        class="bg-white min-h-screen absolute flex items-center flex-col p-6 shadow md:hidden z-50">
+                        <div id="closeBtn" class="ml-28 text-[12px]">✖</div>
+
+                        <div class="w-16 ml-8">
+                            <img src="/assests/teach-able-logo.jpeg" alt="" />
+                            <p class="text-[10px] text-center">
+                                Alpha <span class="text-[#39ab66]">Course</span>
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col  space-y-6 mt-10">
+                            <div class="text-green-700 bg-green-100 p-0.5 rounded-lg flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512">
+                                    <path
+                                        d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zm64 64l0 256 160 0 0-256L64 160zm384 0l-160 0 0 256 160 0 0-256z" />
+                                </svg>
+                                <p>Dashboard</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512">
+                                    <path
+                                        d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                                </svg>
+                                <p>My Profile</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512">
+                                    <path
+                                        d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z" />
+                                </svg>
+                                <p>My Course</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512">
+                                    <path
+                                        d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" />
+                                </svg>
+                                <p>All Course</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 640 512">
+                                    <path
+                                        d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z" />
+                                </svg>
+                                <p>Resources</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-4 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 384 512">
+                                    <path
+                                        d="M64 464c-8.8 0-16-7.2-16-16L48 64c0-8.8 7.2-16 16-16l160 0 0 80c0 17.7 14.3 32 32 32l80 0 0 288c0 8.8-7.2 16-16 16L64 464zM64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-293.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0L64 0zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z" />
+                                </svg>
+                                <p>Webinar</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                                </svg>
+                                <p>Mock Test</p>
+                            </div>
+
+                            <div class="flex px-5 text-sm">
+                                <svg class="w-5 inline mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z" />
+                                </svg>
+                                <p>Competition</p>
+                            </div>
+
+                            <div class="w-full text-left flex px-5 text-sm">
+                                <svg class="w-5 mr-1.5 opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 384 512">
+                                    <path
+                                        d="M192 0c-41.8 0-77.4 26.7-90.5 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-37.5 0C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM72 272a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm104-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zM72 368a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm88 0c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z" />
+                                </svg>
+                                <p>Leaderboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- content -->
+
+
+                <!-- curosel -->
+                <div class="w-full md:w-full h-[120px] md:h-64 overflow-hidden p-2">
+                    <img id="curoselImage" src="" class="w-full h-full object-center rounded-lg" alt="carousel image" />
+                </div>
+
+                <!-- course-progres -->
+                <div class="h-screen overflow-y-auto pb-32">
+
+                    <!-- left -->
+                    <div>
+                        <!-- event-header -->
+                        <div class="flex p-2 m-2 md:justify-start text-sm font-medium text-gray-500">
+                            <div class="mr-3 hover:underline hover:underline-offset-4 hover:text-[#1da599]">
+                                IN PROGRESS
+                            </div>
+                            <div class="mr-3 hover:underline hover:underline-offset-4 hover:text-[#1da599]">
+                                RECOMMENDED
+                            </div>
+                        </div>
+
+                        <!-- video-content -->
+                    </div>
+                    
+
+                    <!-- calendor -->
+
+                    <div> 
+                        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-4">
+                            <div class="flex justify-end items-center mb-4">
+                                <h2 class="text-xl font-bold">May 2025</h2>
+                                <button class="text-gray-600 hover:text-black">&lt;</button>
+                                <button class="text-gray-600 hover:text-black">&gt;</button>
+                            </div>
+
+                            <div class="grid grid-cols-7 text-center text-sm font-medium text-gray-500">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+
+                            <div class="grid grid-cols-7 gap-2 mt-2 text-center">
+                                <!-- Previous month's days (optional) -->
+                                <div class="text-gray-300">27</div>
+                                <div class="text-gray-300">28</div>
+                                <div class="text-gray-300">29</div>
+                                <div class="text-gray-300">30</div>
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+
+                                <!-- Current month days -->
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                                <div>7</div>
+                                <div>8</div>
+                                <div>9</div>
+                                <div>10</div>
+
+                                <div>11</div>
+                                <div>12</div>
+                                <div>13</div>
+                                <div>14</div>
+                                <div>15</div>
+                                <div>16</div>
+                                <div>17</div>
+
+                                <div>18</div>
+                                <div>19</div>
+                                <div>20</div>
+                                <div>21</div>
+                                <div>22</div>
+                                <div>23</div>
+                                <div>24</div>
+
+                                <div>25</div>
+                                <div>26</div>
+                                <div>27</div>
+                                <div>28</div>
+                                <div>29</div>
+                                <div>30</div>
+                                <div>31</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- chat-box -->
+
+        <div class="absolute w-full bottom-2 flex justify-end">
+
+
+            <!-- chat-icon -->
+            <div id="chatIcon"
+                class="w-12 h-12 rounded-3xl shadow-xl border bg-[#F0FDF4] mr-4 md:mr-8 mb-2 flex items-center justify-center cursor-pointer">
+                <img src="/assests/chat-logo.png" class="object-cente w-6" alt="">
+            </div>
+
+
+            <!-- chat-container -->
+            <div id="chatDiv"
+                class="w-72 h-[30rem] rounded-xl shadow-2xl border-2  bg-white mr-2 md:mr-8  absolute bottom-0 md:w-[27rem] flex flex-col overflow-hidden hidden">
+
+                <div class="h-12 w-full  bg-[#F0FDF4] rounded-t-xl flex items-center flex justify-between">
+
+                    <div class="flex">
+                        <div class=""><img src="/assests/chat-box-logo.png" class="w-8 ml-2" alt=""></div>
+                        <div class="ml-2 font-bold text-[#4fbab4] ">AI Assistant</div>
+                    </div>
+
+                    <div id="chatCloseBtn" class="text-[0.7rem] mb-4 mr-2 cursor-pointer">✖</div>
+
+                </div>
+
+
+                <div class="max-h-[24rem] overflow-y-auto pl-4">
+                    <div class="mb-4">chat 1</div>
+                    <div class="mb-4">chat 2</div>
+                    <div class="mb-4">chat 3</div>
+                    <div class="mb-4">chat 4</div>
+                    <div class="mb-4">chat 5</div>
+                    <div class="mb-4">chat 6</div>
+                    <div class="mb-4">chat 7</div>
+                    <div class="mb-4">chat 8</div>
+                    <div class="mb-4">chat 9</div>
+                    <div class="mb-4">chat 10</div>
+                    <div class="mb-4">chat 1</div>
+                    <div class="mb-4">chat 2</div>
+                    <div class="mb-4">chat 3</div>
+                    <div class="mb-4">chat 4</div>
+                    <div class="mb-4">chat 5</div>
+                    <div class="mb-4">chat 6</div>
+                    <div class="mb-4">chat 7</div>
+                    <div class="mb-4">chat 8</div>
+                    <div class="mb-4">chat 9</div>
+                    <div class="mb-4">chat 10</div>
+
+                </div>
+
+
+                <div class="w-full h-12 border rounded-b-xl flex">
+                    <input class="w-full rounded-l-xl pl-2  Monospace " placeholder="Type your questions"></input>
+                    <div class="w-[4rem] flex items-center justify-center ">
+                        <img src="./assests/chat-send-icon.png" class=" w-6 object-center object-cover cursor-pointer"
+                            alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //hambtn
+        document.getElementById("humBtn").addEventListener("click", () => {
+            var dis = document.getElementById("absoluteMenuBar").style.display;
+            if (dis == "none") {
+                document.getElementById("absoluteMenuBar").style.display = "block";
+            }
+        });
+
+        document.getElementById("closeBtn").addEventListener("click", () => {
+
+            var dis = document.getElementById("absoluteMenuBar").style.display;
+            if (dis == "block") {
+                document.getElementById("absoluteMenuBar").style.display = "none";
+
+            }
+        });
+
+        //hide menu bar when md screen size
+        window.addEventListener("resize", function () {
+            var screenWidth = window.innerWidth;
+            if (screenWidth > 640) {
+                document.getElementById("absoluteMenuBar").style.display = "none";
+            }
+        });
+
+        //curosel aaray
+
+        var curoselArray = [
+            "/assests/curosel-img-1.png",
+            "/assests/curosel-img-2.png",
+        ];
+
+        let currentIndex = 0;
+
+        function updateImage() {
+            document.getElementById("curoselImage").src =
+                curoselArray[currentIndex];
+            currentIndex = (currentIndex + 1) % curoselArray.length; // Loop to start
+        }
+
+        // Initial call
+        updateImage();
+
+        // Change image every 3 seconds (3000 ms)
+        setInterval(updateImage, 3000);
+
+
+
+
+
+
+        //AI-Asisstance-div
+        var chatIcon = document.getElementById("chatIcon")
+        var chatContainer = document.getElementById("chatDiv")
+        var chatCloseBtn = document.getElementById("chatCloseBtn")
+
+        chatIcon.addEventListener("click", () => {
+            chatContainer.style.display = "block"
+        })
+
+        chatCloseBtn.addEventListener("click", () => {
+            chatContainer.style.display = "none"
+        })
+
+
+
+    </script>
+</body>
+
+</html>
