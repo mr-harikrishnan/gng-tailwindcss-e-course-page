@@ -10,20 +10,19 @@
 </head>
 
 <body>
-  <div class="min-h-screen bg-gray-300 relative">
-    <div class="flex h-screen overflow-hidden">
+  <div class="flex h-screen  overflow-hidden">
       <!-- menubar -->
-      <div id="menuBar" class="bg-white px-12 border-r-2 md:flex flex-col items-center hidden">
+      <div id="menuBar" class="hidden w-[14.5rem] bg-[fffff] overflow-y-auto md:block border-r-[#E4E4E7] border-r-[1px]">
         <!-- logo -->
-        <div class="w-16 m-3">
-          <img src="../assests/teach-able-logo.jpeg" alt="" />
+        <div class="w-full m flex items-center flex-col justify-center">
+          <img class="w-14" src="../assests/teach-able-logo.jpeg" alt="" />
           <p class="text-[10px] font-semibold text-center">
             Teach <span class="text-[#4FBAB4]">Able</span>
           </p>
         </div>
 
         <!-- menubar content -->
-        <div class="flex flex-col  space-y-2.5 mt-2 text-gray-500">
+        <div class="flex flex-col pl-6  space-y-2.5 mt-2 text-gray-500">
           <div class="text-green-700 bg-green-100 p-0.5 rounded-lg flex">
             <svg class="w-4 inline mr-1 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
               <path
@@ -465,7 +464,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
 
 
 
@@ -474,7 +473,7 @@
 
     <!-- chat-box -->
 
-    <div class="absolute w-full bottom-2 flex justify-end">
+    <div class="absolute w-full bottom-2 flex justify-end ">
 
 
       <!-- chat-icon -->
@@ -484,9 +483,9 @@
 
 
       <!-- chat-container -->
-      <div id="chatDiv" class="w-72 h-[30rem] rounded-xl shadow-2xl border-2  bg-white mr-2 md:mr-8  absolute bottom-0 md:w-[27rem] flex flex-col overflow-hidden hidden">
+      <div id="chatDiv" class="w-72 h-[30rem] rounded-xl shadow-2xl border-2  bg-white mr-2 md:mr-8  absolute bottom-0 md:w-[27rem] flex-col overflow-hidden hidden">
 
-        <div class="h-12 w-full  bg-[#F0FDF4] rounded-t-xl flex items-center flex justify-between">
+        <div class="h-12 w-full  bg-[#F0FDF4] rounded-t-xl flex items-center  justify-between">
 
           <div class="flex">
             <div class=""><img src="./assests/chat-box-logo.png" class="w-8 ml-2" alt=""></div>
