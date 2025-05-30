@@ -27,7 +27,7 @@
                             class="font-bold text-[#4DB7AD]">able</span></p>
                 </div>
                 <!-- MENU-CONTENT -->
-                <div class="flex-1 mt-[1rem]  px-2 space-y-1 w-full text-md">
+                <div class="flex-1 mt-[1rem]  px-4 space-y-1 w-full text-md">
 
                     <div
                         class="w-full cursor-pointer hover:bg-[#F0FDF4] hover:text-green-600    flex items-center text-gray-400 font-normal bg-[#F0FDF4] ">
@@ -220,7 +220,7 @@
                         </div>
 
                         <!-- Dots -->
-                        <div id="dot" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
+                        <div id="dot" class="dot absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
 
                             <!-- append in script -->
                         </div>
@@ -823,10 +823,15 @@
             }
 
 
-            var dots = document.querySelectorAll('.dot');
+            var dots = document.querySelectorAll('.dot')
 
 
             function setImage(index) {
+
+                dots.forEach((span, index) => {
+                    span.style.opacity=0.7
+
+                })
                 imageElement.src = `${images[index][0]}`
                 caroTitle.textContent = `${images[index][1]}`
                 caroSubTitle.textContent = `${images[index][2]}`
@@ -834,7 +839,6 @@
                     document.getElementById(`dotid${index}`).style.opacity = 1
                 }
                 else {
-                    document.getElementById(`dotid${index - 1}`).style.opacity = 0.5
                     document.getElementById(`dotid${index}`).style.opacity = 1
                 }
 
