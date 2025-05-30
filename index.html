@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <div class="w-full pb-6 flex flex-col item-center">
                 <!-- LOGO-IMG -->
                 <div class="w-full  flex justify-center items-center mt-2 flex-col">
-                    <img class="w-[3.5rem]" src="/assests/teach-able-logo.jpeg" alt="">
+                    <img class="w-[3.5rem]" src="/assets/teach-able-logo.jpeg" alt="">
                     <p class="font-extralight text-xs tracking-[0.1rem]">Teach<span
                             class="font-bold text-[#4DB7AD]">able</span></p>
                 </div>
@@ -147,10 +147,12 @@
             </svg>
 
         </div>
+        <div id="bg-black-transperent" class="bg-black fixed inset-0 w-full h-full bg-opacity-70 z-30 hidden"></div>
 
         <!-- --------------------------------------------------------------------------------------------------------------- -->
 
         <!-- RIGHT-CONTENT-DiV -->
+
         <div id="right-container" class="h-full w-full overflow-hidden  ">
 
 
@@ -167,7 +169,7 @@
                         </svg>
                     </div>
 
-                    <div class=" h-16 ml-3 p-2 flex items-center justify-center ">
+                    <div class=" h-16 ml-3 p-2 lg:flex items-center justify-center hidden">
                         <p class="font-[400] text-lg">Dashboard</p>
                     </div>
 
@@ -175,9 +177,9 @@
 
                 <!-- RIGHT-lANG-BELL-TITLE -->
 
-                <div class="flex space-x-4   mr-3 items-center ">
-                    <select class="border p-1 rounded-lg drop-shadow-2xl cursor-pointer ">
-                        <option>
+                <div class="flex space-x-4   mr-5 items-center ">
+                    <select class="shadow-lg p-1 px-4 rounded-lg drop-shadow-2xl cursor-pointer bg-white ">
+                        <option class="bg-white">
                             🌐 English
                         </option>
                     </select>
@@ -190,7 +192,7 @@
                     </div>
 
                     <div>
-                        <img class="w-10 cursor-pointer" src="/assests/user.png" alt="">
+                        <img class="w-10 cursor-pointer" src="/assets/user.png" alt="">
                     </div>
 
                 </div>
@@ -200,524 +202,591 @@
             <div class="h-screen overflow-y-auto ">
 
                 <!-- CUROSEL -->
-                <div class="w-full border h-96 p-4 md:h-[17rem] lg:h-[18rem]">
+                <div class="relative m-4 rounded-2xl border overflow-hidden">
+                    <div
+                        class="relative shadow-common-primary m-4 bg-gradient-to-r from-[#003632] to-[#00574C] h-[240px] rounded-2xl flex items-center p-10 overflow-hidden">
 
-                    <div class="w-full border-2 h-full rounded-2xl ">
-                        <img src="/assests/curosel-img-1.png" class="h-full w-full object-center rounded-2xl" alt="">
+                        <!-- Image -->
+                        <img id="carouselImage" src="https://via.placeholder.com/800x240?text=Image+1"
+                            class="absolute inset-0 w-full h-full object-cover opacity-60 rounded-2xl" />
+
+                        <!-- Overlay content -->
+                        <div class="relative z-10 mt-20">
+                            <h1 id="caro-title"
+                                class="text-xl  md:text-3xl lg:text-4xl xl:text-5xl text-[#FAFBFC] font-normal">
+                                Sample resource
+                            </h1>
+                            <p id="caro-subTitle" class="text-white text-sm mt-2">resource</p>
+                        </div>
+
+                        <!-- Dots -->
+                        <div id="dot" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
+
+                            <!-- append in script -->
+                        </div>
                     </div>
                 </div>
 
 
-                <!-- BOTTOM-CUROSEL-CONTENT -->
-                <div class="w-full flex flex-col lg:flex-row  px-2 pb-24 ">
 
-                    <!-- LEFT -->
 
-                    <div class="w-full lg:w-[65%] order-5 lg:order-1 ">
-                        <!-- progress bar -->
-                        <div class="border rounded-2xl  m-2 shadow-lg p-2 flex flex-col items-center lg:flex-row">
-                            <!-- Circular Progress -->
-                            <div class="relative size-28 p-2">
-                                <svg class="size-full -rotate-90" viewBox="0 0 36 36"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Background Circle -->
-                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-200"
-                                        stroke-width="4">
-                                    </circle>
-                                    <!-- Progress Circle -->
-                                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-[#4FBAB4]"
-                                        stroke-width="4" stroke-dasharray="100.53" stroke-dashoffset="65.34"
-                                        stroke-linecap="round"></circle>
-                                </svg>
-                                <!-- Percentage Text -->
-                                <div class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                                    <span class="text-center text-2xl font-bold text-black">35%</span>
+                <!-- BOTTOM CUROSEL CONTAINER -->
+                <article class="flex flex-col-reverse xl:flex-row gap-4 p-4 pb-24">
+
+                    <!-- CONTENT -CONTAINER -->
+                    <section class="w-full">
+
+                        <!-- PROGRESS-CONTAINER -->
+                        <div class="flex flex-col lg:flex-row items-stretch gap-4">
+                            <section
+                                class="flex-1 border p-4 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-4 mb-4">
+                                <div class="sm:hidden self-center"><svg width="150" height="150" class="block">
+                                        <circle stroke="lightgrey" fill="transparent" stroke-width="25" r="62.5" cx="75"
+                                            cy="75"></circle>
+                                        <circle stroke="#25A198" fill="transparent" stroke-width="25"
+                                            stroke-dasharray="392.6990816987241" stroke-dashoffset="357.3561643458389"
+                                            r="62.5" cx="75" cy="75"
+                                            style="transition: stroke-dashoffset 0.5s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                                        </circle><text x="50%" y="50%" dy=".3em" text-anchor="middle" font-size="20px"
+                                            fill="##363739" class="font-semibold">9%</text>
+                                    </svg></div>
+                                <div class="hidden sm:block"><svg width="90" height="90" class="block">
+                                        <circle stroke="lightgrey" fill="transparent" stroke-width="15" r="37.5" cx="45"
+                                            cy="45"></circle>
+                                        <circle stroke="#25A198" fill="transparent" stroke-width="15"
+                                            stroke-dasharray="235.61944901923448" stroke-dashoffset="214.41369860750336"
+                                            r="37.5" cx="45" cy="45"
+                                            style="transition: stroke-dashoffset 0.5s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                                        </circle><text x="50%" y="50%" dy=".3em" text-anchor="middle" font-size="20px"
+                                            fill="##363739" class="font-semibold">9%</text>
+                                    </svg></div>
+                                <div>
+                                    <div class="mb-4">
+                                        <h4 class="text-charcoal-black font-bold text-lg">Welcome undefined undefined!
+                                        </h4>
+                                        <p class="text-steel-gray text-sm text-slate-400">Your progress is going well
+                                            with
+                                            9% course completion</p>
+                                    </div><button
+                                        class="block w-full sm:w-fit  py-1.5 px-4 border text-center text-sm font-medium rounded-lg uppercase border-[#25a198] text-[#25a198] hover:bg-[#25a198] hover:text-white duration-300">GO
+                                        TO COURSE</button>
                                 </div>
-                            </div>
+                            </section>
 
-                            <!-- progress-content -->
-                            <div class="border-0 w-full p-2">
-                                <p class="font-semibold text-lg m-0.5">Welcome Sanjay kannan!</p>
-                                <p class="text-sm text-gray-400 m-0.5">
-                                    Your progress is going well with 11% course completion
-                                </p>
-                                <button
-                                    class="w-full mt-4  border font-normal px-2 py-1 rounded-lg border-black text-[#2a6e6b] lg:w-36 hover:bg-[#2a6e6b] hover:text-white">
-                                    GO TO COURSE
-                                </button>
-                            </div>
-                        </div>
+                            <!-- GOAL-CONATINER -->
+                            <div class="flex-1 mb-4 xl:hidden">
+                                <section class="sm:min-w-[380px]  h-full border p-4 rounded-2xl shadow-lg">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-charcoal-black font-semibold">Your Goal</p>
 
-
-                        <!-- activity-header -->
-                        <div class="flex p-2 m-2 lg:justify-start text-sm font-normal">
-                            <div class="mr-3 cursor-pointer hover:underline hover:underline-offset-4 hover:text-[#1da599]">
-                                IN PROGRESS
-                            </div>
-                            <div class="mr-3 cursor-pointer hover:underline hover:underline-offset-4 hover:text-[#1da599]">
-                                RECOMMENDED
-                            </div>
-                            <div class="mr-3 cursor-pointer hover:underline hover:underline-offset-4 hover:text-[#1da599]">
-                                SAVED
-                            </div>
-                        </div>
-
-                        <!-- video-contents -->
-                        <div id="videoContents" class="mx-3 flex flex-col gap-4 pb-2">
-
-                            <!-- ***** -->
-                            <div
-                                class="flex w-full flex-col p-2  justify-center border-2 shadow-lg rounded-lg  lg:flex-row lg:items-center cursor-pointer hover:shadow-2xl">
-
-                                <!-- Video Thumbnail -->
-                                <div class=" w-full lg:h-[6rem] lg:w-[12rem] rounded-lg">
-                                    <img class="h-full w-full rounded-lg border-2 border-amber-300 object-cover object-center"
-                                        src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg"
-                                        alt="Course Thumbnail" />
-                                </div>
-
-                                <!-- Video Description -->
-                                <div class=" flex flex-1 flex-col lg:items-start  lg:ml-4 ">
-                                    <div class="font-normal text-gray-800">Sample test-1</div>
-                                    <div class="text-sm  text-gray-300">
-                                        Test Subtitle
                                     </div>
-
-                                    <div class="flex items-center my-2 text-sm  text-[#D3D3D3]">
-                                        <svg class=" mr-2 size-4 -rotate-90" viewBox="0 0 36 36"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="18" cy="18" r="16" fill="none"
-                                                class="stroke-current text-gray-400" stroke-width="5" />
-                                        </svg>
-                                        0% completed
-                                    </div>
-
-                                    <!-- Footer Row -->
-                                    <div class="flex w-full lg:items-center  lg:justify-between  flex-col lg:flex-row ">
-                                        <div class="text-[0.8rem] font-normal text-gray-300 mb-2">
-                                            (last updated at May 23rd, 2025 – 1:13 PM)
-                                        </div>
-                                        <button
-                                            class=" w-full text-nowrap rounded-md border border-[#3d8a87] lg:w-36  p-[4px] text-sm font-medium text-[#3d8a87] cursor-pointer hover:bg-[#2f726f] hover:text-white">
-                                            VIEW COURSE
-                                        </button>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <!-- RIGHT -->
-                    <div class="w-full p-2 flex-1 mb-3 order-3">
-
-                        <!-- GOAL-DIV -->
-
-                        <div class=" border  rounded-lg shadow-lg hover:shadow-lg lg:max-w-[30rem] m-1.5 ">
-                            <div class="font-bold mx-3 my-2">Your goal</div>
-
-                            <div class="m-3 bg-[#ebf9f6] p-2 rounded-lg">
-
-                                <div class="flex justify-between">
-                                    <div class="">This Week</div>
-                                    <div class="">45% <span class="text-gray-400">(of 10.00 hours)</span></div>
-                                </div>
-
-                                <div class="my-2">
-                                    <div class="w-full  bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                        <div class="bg-[#006A63]  h-2.5 rounded-full" style="width: 45%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-                        <!-- CALANDER-DIV -->
-                        <div class="border  rounded-lg shadow-lg hover:shadow-lg md:max-w-[25rem] mx-auto lg:max-w-[30rem] m-2 ">
-                            <div class=" w-full shadow-lg">
-                                <div class="lg:p-8 p-5 dark:bg-gray-800 bg-white rounded-2xl">
-                                    <div class="px-4 flex items-center justify-between">
-                                        <span tabindex="0"
-                                            class="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800">May
-                                            2020</span>
-                                        <div class="flex items-center">
-                                            <button aria-label="calendar backward"
-                                                class="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-chevron-left" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <polyline points="15 6 9 12 15 18" />
-                                                </svg>
-                                            </button>
-                                            <button aria-label="calendar forward"
-                                                class="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler  icon-tabler-chevron-right" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <polyline points="9 6 15 12 9 18" />
-                                                </svg>
-                                            </button>
-
+                                    <!-- GOAL-BOTTOM-BAR -->
+                                    <div class="mt-2">
+                                        <div class="bg-[#F2F8F7] p-[1rem] rounded-lg w-full">
+                                            <div class="flex items-center justify-between mb-2"><label
+                                                    class="text-gray-700 font-medium">This week</label><span
+                                                    class="text-gray-600">55% <span
+                                                        class="text-[0.8rem] text-[#b1b1b1]"> (of 10.00
+                                                        hours)</span>
+                                            </div>
+                                            <!-- GOAL-PROGRESS-BAR -->
+                                            <div class="w-full bg-[#E3EFEE] h-2 rounded-full">
+                                                <div class="w-[55%] bg-[#05a699] h-2 rounded-full">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex items-center justify-between pt-12 overflow-x-auto">
-                                        <table class="w-full">
-                                            <thead>
-                                                <tr>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                M</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                T</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                W</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                T</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                F</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                S</p>
-                                                        </div>
-                                                    </th>
-                                                    <th>
-                                                        <div class="w-full flex justify-center">
-                                                            <p
-                                                                class="text-base font-medium text-center text-gray-500 dark:text-gray-100">
-                                                                S</p>
-                                                        </div>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                27</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                28</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                29</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                30</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                1</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">2</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">3</p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                4</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                5</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                6</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="w-full h-full">
-                                                            <div
-                                                                class="flex items-center justify-center w-full rounded-full cursor-pointer">
-                                                                <p
-                                                                    class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                    7</p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                8</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">9</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">10</p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                11</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                12</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                13</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                14</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                15</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">16</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">17</p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                18</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                19</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                20</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                21</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                22</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">23</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p class="text-base text-gray-500 dark:text-gray-100">24</p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                25</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                26</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                27</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-gray-500 dark:text-gray-100 font-medium">
-                                                                28 </p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="w-full h-full">
-                                                            <div
-                                                                class="flex items-center justify-center w-full rounded-full cursor-pointer">
-                                                                <a role="link" tabindex="0"
-                                                                    class="focus:outline-none  focus:ring-2 focus:ring-offset-2  hover:bg-[] text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-[#aaaaaa] rounded-full">30</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-black dark:text-gray-100 font-medium">
-                                                                30</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div
-                                                            class="px-2 py-2 cursor-pointer flex w-full justify-center">
-                                                            <p
-                                                                class="text-base text-black dark:text-gray-100 font-medium">
-                                                                31 </p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- CONTENT-HEADER -->
+
+                        <nav class="flex flex-col sm:flex-row gap-2 ">
+                            <ul class="flex">
+                                <li
+                                    class="px-4 py-[9px] text-sm font-medium  cursor-pointer uppercase border-primary text-primary hover:border-b-2 hover:text-[#25a198]">
+                                    IN PROGRESS</li>
+                                <li
+                                    class="px-4 py-[9px] text-sm font-medium border-b-2 cursor-pointer uppercase border-transparent text-urban-slate hover:border-b-2 hover:text-[#25a198]">
+                                    RECOMMENDED</li>
+                                <li
+                                    class="px-4 py-[9px] text-sm font-medium border-b-2 cursor-pointer uppercase border-transparent text-urban-slate hover:border-b-2 hover:text-[#25a198]">
+                                    SAVED</li>
+                            </ul>
+                        </nav>
+
+                        <!-- OVER-ALL-CONTENT-CONATINER -->
+                        <section class="mb-6">
+                            <!-- ALL-CONTENT -->
+                            <div id="all-content" class="p-4">
+
+
+                                <!-- ******** -->
+                                <!-- CONTENT -->
+                                <div
+                                    class="transition-all duration-500 hover:scale-105  border-[1px] p-4 mb-4 bg-white rounded-2xl flex flex-col min-[871px]:flex-row min-[871px]:items-stretch gap-4 border-[#E4E4E7] shadow-lg">
+
+                                    <!-- content-img -->
+                                    <div
+                                        class="relative self-center flex-1 min-[871px]:flex-none w-full min-[871px]:w-[165px] overflow-hidden border rounded-lg border-[#EAB308]">
+
+                                        <img src="https://cdn.appbuild.pro/course/thumbnail/ae4924a0-ba3d-4ce2-b110-2ac4d275071e.jpeg"
+                                            class="w-full object-contain" alt="RLC 1">
+                                    </div>
+
+                                    <!-- content-detalis -->
+                                    <div
+                                        class="flex-1 flex flex-col min-[871px]:flex-row min-[871px]:items-end min-[871px]:justify-between gap-4 overflow-hidden">
+                                        <div class="flex-1 min-w-10">
+                                            <h6 class="font-medium text-base text-[#363739] truncate">RLC 1</h6>
+                                            <p class="text-xs font-medium text-[#a0a0a0] truncate">RLC 1</p>
+                                            <p
+                                                class="flex items-center justify-start gap-[0.6rem] text-[#b1b1b1] text-[0.69rem] tracking-wide mt-2">
+                                                <svg width="20" height="20" class="block">
+                                                    <circle stroke="lightgrey" fill="transparent" stroke-width="4" r="8"
+                                                        cx="10" cy="10"></circle>
+                                                    <circle stroke="#25A198" fill="transparent" stroke-width="4"
+                                                        stroke-dasharray="50.26548245743669"
+                                                        stroke-dashoffset="50.26548245743669" r="8" cx="10" cy="10"
+                                                        style="transition: stroke-dashoffset 0.5s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                                                    </circle>
+                                                </svg><span>0% COMPLETED</span>
+                                            </p>
+                                            <p class="text-[#D2D2D2] text-[0.69rem] tracking-wide mt-2">(Last updated at
+                                                May 29th, 2025,4:00 PM)</p>
+                                        </div>
+                                        <div class="min-w-[120px] min-[871px]:max-w-[180px] w-full"><button
+                                                class="bg-transparent  text-primary border-primary  border-[1px] px-[0.8rem] py-[0.2rem] rounded-md w-full uppercase hover:bg-[#25a198] hover:text-white duration-300">view
+                                                course</button></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                    </section>
+
+
+
+                    <!-- DUBLICATE GOAL BAR AND ONE CALENDER -->
+                    <div class="flex-1">
+
+                        <div class="">
+                            <section class="sm:min-w-[380px] h-full border p-4 rounded-2xl shadow-lg">
+
+                                <div class="mt-2">
+                                    <div class="bg-[#F2F8F7] p-[1rem] rounded-lg w-full">
+                                        <div class="flex items-center justify-between mb-2"><label
+                                                class="text-gray-700 font-medium">This week</label><span
+                                                class="text-gray-600">55% <span class="text-[0.8rem] text-[#b1b1b1]">
+                                                    (of 10.00 hours)</span></span></div>
+                                        <div class="w-full bg-[#E3EFEE] h-2 rounded-full">
+                                            <div class="w-[50%] bg-[#49908a] h-2 rounded-full">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </div>
+
+                        <!-- CALENDER -->
+                        <section
+                            class="block flex-1 mt-4 sm:min-w-[380px] max-w-[380px] mx-auto border h-fit p-4 rounded-2xl shadow-lg">
+                            <div class="font-poppins">
+                                <div class="flex items-center">
+                                    <h2 class="flex-auto text-sm font-semibold text-gray-900">May 2025</h2><button
+                                        type="button"
+                                        class="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"><span
+                                            class="sr-only">Previous month</span><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon"
+                                            class="h-5 w-5">
+                                            <path fill-rule="evenodd"
+                                                d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                                                clip-rule="evenodd"></path>
+                                        </svg></button><button type="button"
+                                        class="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"><span
+                                            class="sr-only">Next month</span><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon"
+                                            class="h-5 w-5">
+                                            <path fill-rule="evenodd"
+                                                d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                clip-rule="evenodd"></path>
+                                        </svg></button>
+                                </div>
+                                <div class="p-2.5 click-target">
+                                    <div
+                                        class="grid grid-cols-7 text-center text-[0.65rem] gap-4 leading-6 text-gray-500 *:font-poppins *:uppercase">
+                                        <div>M</div>
+                                        <div>T</div>
+                                        <div>W</div>
+                                        <div>T</div>
+                                        <div>F</div>
+                                        <div>S</div>
+                                        <div>S</div>
+                                    </div>
+                                    <div class="mt-2 grid grid-cols-7 gap-x-4 text-[0.65rem]">
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none   m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-default"
+                                                        datetime="2025-04-27">27</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none   m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-default"
+                                                        datetime="2025-04-28">28</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none   m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-default"
+                                                        datetime="2025-04-29">29</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none   m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-default"
+                                                        datetime="2025-04-30">30</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-01">1</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-02">2</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-03">3</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-04">4</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-05">5</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-06">6</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-07">7</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-08">8</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-09">9</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-10">10</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-11">11</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-12">12</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-13">13</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-14">14</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-15">15</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-16">16</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-17">17</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-18">18</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-19">19</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-20">20</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-21">21</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-22">22</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-23">23</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-24">24</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-25">25</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-8px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-26">26</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-27">27</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-28">28</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="text-gray-400 pointer-events-none hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-85px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-29">29</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="bg-[#aaa] text-white font-semibold  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-30">30</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="hover:bg-gray-200  m-1 flex size-[22px] items-center justify-center rounded-full ">
+                                                <div class="relative">
+                                                    <div class="absolute bottom-[21px] z-[2] left-[-150px]"></div><time
+                                                        class="font-poppins z-[1] cursor-pointer"
+                                                        datetime="2025-05-31">31</time>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-
+                        </section>
                     </div>
+                </article>
 
-                </div>
+
+
 
 
 
@@ -729,6 +798,70 @@
 
         <script>
 
+            //curosel
+
+            var images = [
+                ['/assets/curo-1.jpeg', "Sample resource 1", "resource 1"],
+                ['/assets/curo-1.jpeg', "Sample resource 2", "resource 2"],
+                ['/assets/curo-1.jpeg', "Sample resource 3", "resource 3"]
+            ];
+
+
+
+            var imagesLen = images.length;
+            var dotContainer = document.getElementById("dot");
+            var caroTitle = document.getElementById("caro-title");
+            var caroSubTitle = document.getElementById("caro-subTitle");
+            var imageElement = document.getElementById('carouselImage');
+
+            // Create dots dynamically
+            for (let i = 0; i < imagesLen; i++) {
+                dotContainer.innerHTML += `
+            <span id="dotid${i}" class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer"
+                  onclick="setImage(${i})"></span>
+        `;
+            }
+
+
+            var dots = document.querySelectorAll('.dot');
+
+
+            function setImage(index) {
+                imageElement.src = `${images[index][0]}`
+                caroTitle.textContent = `${images[index][1]}`
+                caroSubTitle.textContent = `${images[index][2]}`
+                if (index == 0) {
+                    document.getElementById(`dotid${index}`).style.opacity = 1
+                }
+                else {
+                    document.getElementById(`dotid${index - 1}`).style.opacity = 0.5
+                    document.getElementById(`dotid${index}`).style.opacity = 1
+                }
+
+
+
+            }
+            setImage(0)
+
+
+            let currentIndex = 0;
+            setInterval(() => {
+
+                if (currentIndex == imagesLen - 1) {
+                    setImage(currentIndex)
+                    currentIndex = 0
+                }
+                else {
+                    setImage(currentIndex)
+                    currentIndex++
+                }
+
+
+            }, 2000);
+
+
+
+
 
             //menubar for media query
 
@@ -736,81 +869,89 @@
             var leftMenuBar = document.getElementById("leftMenuBar")
             var hamIcon = document.getElementById("hamIcon")
 
+
+
             window.addEventListener("resize", () => {
                 var width = window.innerWidth
 
                 if (width > 1023) {
                     leftMenuBar.style.display = "block"
                     closeBtn.style.display = "none"
-                    
+
                 }
-                else{
+                else {
                     leftMenuBar.style.display = "none"
                     closeBtn.style.display = "none"
                 }
 
             })
 
+
+
+
             hamIcon.addEventListener("click", () => {
+
+
                 leftMenuBar.style.display = "block"
                 closeBtn.style.display = "block"
+                document.getElementById("bg-black-transperent").style.display = "block"
             })
 
             closeBtn.addEventListener("click", () => {
                 leftMenuBar.style.display = "none"
                 closeBtn.style.display = "none"
+                document.getElementById("bg-black-transperent").style.display = "none"
+
             })
 
 
 
             //dublicate video content
-            var videoContents = document.getElementById("videoContents")
+
+            var allContent = document.getElementById("all-content")
 
             for (let i = 0; i < 10; i++) {
-                videoContents.innerHTML += `
-            <!-- ***** -->
-                            <div
-                                class="flex w-full flex-col p-2 shadow-lg justify-center border-2 rounded-lg  lg:flex-row lg:items-center cursor-pointer hover:shadow-2xl">
+                allContent.innerHTML += `
+                <!-- ******** -->
+                                <!-- CONTENT -->
+                                <div
+                                    class="transition-all duration-500 hover:scale-105  border-[1px] p-4 mb-4 bg-white rounded-2xl flex flex-col min-[871px]:flex-row min-[871px]:items-stretch gap-4 border-[#E4E4E7] shadow-lg">
 
-                                <!-- Video Thumbnail -->
-                                <div class=" w-full lg:h-[6rem] lg:w-[12rem] rounded-lg">
-                                    <img class="h-full w-full rounded-lg border-2 border-amber-300 object-cover object-center"
-                                        src="https://img-c.udemycdn.com/course/240x135/4230892_781b_2.jpg"
-                                        alt="Course Thumbnail" />
-                                </div>
+                                    <!-- content-img -->
+                                    <div
+                                        class="relative self-center flex-1 min-[871px]:flex-none w-full min-[871px]:w-[165px] overflow-hidden border rounded-lg border-[#EAB308]">
 
-                                <!-- Video Description -->
-                                <div class=" flex flex-1 flex-col lg:items-start  lg:ml-4 ">
-                                    <div class="font-normal text-gray-800">Sample test-1</div>
-                                    <div class="text-sm  text-gray-300">
-                                        Test Subtitle
+                                        <img src="https://cdn.appbuild.pro/course/thumbnail/ae4924a0-ba3d-4ce2-b110-2ac4d275071e.jpeg"
+                                            class="w-full object-contain" alt="RLC 1">
                                     </div>
 
-                                    <div class="flex items-center my-2 text-sm  text-[#D3D3D3]">
-                                        <svg class=" mr-2 size-4 -rotate-90" viewBox="0 0 36 36"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="18" cy="18" r="16" fill="none"
-                                                class="stroke-current text-gray-400" stroke-width="5" />
-                                        </svg>
-                                        0% completed
-                                    </div>
-
-                                    <!-- Footer Row -->
-                                    <div class="flex w-full lg:items-center  lg:justify-between  flex-col lg:flex-row ">
-                                        <div class="text-[0.8rem] font-normal text-gray-300 mb-2">
-                                            (last updated at May 23rd, 2025 – 1:13 PM)
+                                    <!-- content-detalis -->
+                                    <div
+                                        class="flex-1 flex flex-col min-[871px]:flex-row min-[871px]:items-end min-[871px]:justify-between gap-4 overflow-hidden">
+                                        <div class="flex-1 min-w-10">
+                                            <h6 class="font-medium text-base text-[#363739] truncate">RLC 1</h6>
+                                            <p class="text-xs font-medium text-[#a0a0a0] truncate">RLC 1</p>
+                                            <p
+                                                class="flex items-center justify-start gap-[0.6rem] text-[#b1b1b1] text-[0.69rem] tracking-wide mt-2">
+                                                <svg width="20" height="20" class="block">
+                                                    <circle stroke="lightgrey" fill="transparent" stroke-width="4" r="8"
+                                                        cx="10" cy="10"></circle>
+                                                    <circle stroke="#25A198" fill="transparent" stroke-width="4"
+                                                        stroke-dasharray="50.26548245743669"
+                                                        stroke-dashoffset="50.26548245743669" r="8" cx="10" cy="10"
+                                                        style="transition: stroke-dashoffset 0.5s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                                                    </circle>
+                                                </svg><span>0% COMPLETED</span>
+                                            </p>
+                                            <p class="text-[#D2D2D2] text-[0.69rem] tracking-wide mt-2">(Last updated at
+                                                May 29th, 2025,4:00 PM)</p>
                                         </div>
-                                        <button
-                                            class="text-nowrap w-full rounded-md border border-[#3d8a87] lg:w-36  p-[4px] text-sm font-medium text-[#3d8a87] cursor-pointer hover:bg-[#2f726f] hover:text-white">
-                                            VIEW COURSE
-                                        </button>
+                                        <div class="min-w-[120px] min-[871px]:max-w-[180px] w-full"><button
+                                                class="bg-transparent  text-primary border-primary  border-[1px] px-[0.8rem] py-[0.2rem] rounded-md w-full uppercase hover:bg-[#25a198] hover:text-white duration-300">view
+                                                course</button></div>
                                     </div>
-
-
                                 </div>
-                            </div>
-            
-            `
+                `
             }
 
 
